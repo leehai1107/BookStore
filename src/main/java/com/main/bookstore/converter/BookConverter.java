@@ -20,7 +20,7 @@ public class BookConverter implements Converter<Book, BookModel>{
 	public BookModel toModel(Book entity) {
 		BookModel model = new BookModel();
 		model.setBookId(entity.getBookId());
-		model.setBookTitle(entity.getBookTitle());
+		model.setTitle(entity.getTitle());
 		model.setDescription(entity.getDescription());
 		model.setAuthor(entity.getAuthor());
 		model.setImageUrl(entity.getImageUrl());
@@ -46,7 +46,7 @@ public class BookConverter implements Converter<Book, BookModel>{
 		Book entity = new Book();
 		entity.setPageCount(model.getPageCount());
 		entity.setBookId(model.getBookId());
-		entity.setBookTitle(model.getBookTitle());
+		entity.setTitle(model.getTitle());
 		entity.setDescription(model.getDescription());
 		entity.setAuthor(model.getAuthor());
 		entity.setImageUrl(model.getImageUrl());

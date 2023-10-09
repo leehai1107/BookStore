@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.main.bookstore.model.BookModel;
@@ -36,5 +37,15 @@ public class BookAPI {
 		}else {
 			return ResponseEntity.notFound().build();
 		}
+	}
+	
+	@GetMapping("/namebooks")
+	public ResponseEntity<List<BookModel>> findAllBooksByName(@RequestParam("bookname") String bookName) {
+	    List<BookModel> books = bookService.findAllBooksByName(bookName);
+	    if (!books.isEmpty()) {
+	        return ResponseEntity.ok(books);
+	    } else {
+	        return ResponseEntity.notFound().build();
+	    }
 	}
 }

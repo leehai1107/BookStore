@@ -40,4 +40,18 @@ public class BookServiceImpl implements IBookService{
 		return model;
 	}
 	
+	@Override
+	public List<BookModel> findAllBooksByName(String bookName) {
+	    // Assuming you have a book repository or DAO class
+	    // Inject or instantiate the repository/DAO as needed
+
+	    // Example implementation using a database query
+	    List<Book> books = bookRepository.findByTitleContainingIgnoreCase(bookName);
+	    List<BookModel> model = books.stream()
+        .map(bookConverter::toModel)
+        .collect(Collectors.toList());
+
+	    return model;
+	}
+	
 }

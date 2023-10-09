@@ -12,7 +12,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class BookModel {	
 	private String bookId;
-    private String bookTitle;
+    private String title;
     private String author;
     private String publisher;
     private Date publishDate;

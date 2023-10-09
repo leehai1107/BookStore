@@ -15,4 +15,7 @@ public interface IBookService {
 	BookModel getBookById(String id);
 
 
+	List<BookModel> findAllBooksByName(String bookName);
+
+
 }
